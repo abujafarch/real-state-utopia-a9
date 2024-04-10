@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div className='flex justify-between mt-8 items-center'>
+        <div className='flex justify-between mt-8 mb-5 items-center'>
             <div >
                 <NavLink to='/'><h1 className='text-[#2a9d8f] font-extrabold text-3xl font-bungee text-left'>Utopia</h1></NavLink>
             </div>
