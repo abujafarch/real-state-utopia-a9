@@ -1,6 +1,6 @@
 const Footer = () => {
     return (
-        <div>
+        <div className="mt-[500px]">
             this is footer 
         </div>
     );

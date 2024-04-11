@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "image_url": "https://i.ibb.co/f22gjrw/apartment.jpg",
+    "estate_title": "Modern City Apartment",
+    "segment_name": "Apartment",
+    "description": "Experience the epitome of urban living in this sleek and contemporary apartment located in the vibrant heart of the city. With its stylish design and convenient amenities, this apartment offers the perfect blend of comfort and sophistication. Enjoy stunning city views and easy access to all the best restaurants, shops, and entertainment venues.",
+    "price": 3000,
+    "status": "rent",
+    "area": 1200,
+    "location": "789 Downtown Avenue, Metro City",
+    "facilities": [
+      "Gym",
+      "Swimming Pool",
+      "Security"
+    ]
+  },
+  {
+    "id": 2,
+    "image_url": "https://i.ibb.co/XFsd2TN/single-family.jpg",
+    "estate_title": "Spacious Suburban Home",
+    "segment_name": "Single Family Home",
+    "description": "Escape the hustle and bustle of city life and embrace tranquility in this spacious suburban home. Boasting ample living space, a large backyard, and a peaceful neighborhood setting, this home is perfect for families seeking comfort and relaxation. Enjoy the charm of suburban living while still being close to schools, parks, and amenities.",
+    "price": 450000,
+    "status": "sale",
+    "area": 3500,
+    "location": "123 Oak Street, Suburbia",
+    "facilities": [
+      "Backyard",
+      "Garage",
+      "Fireplace"
+    ]
+  },
+  {
+    "id": 3,
+    "image_url": "https://i.ibb.co/CzmsFK2/townhouse.jpg",
+    "estate_title": "Charming Townhouse by the Park",
+    "segment_name": "Townhouse",
+    "description": "Indulge in the timeless charm of this townhouse nestled by the park in a quaint neighborhood. With its elegant architecture and modern amenities, this home offers the perfect blend of sophistication and comfort. Enjoy leisurely strolls in the park or relax in the private courtyard, making every day a retreat.",
+    "price": 550000,
+    "status": "sale",
+    "area": 2800,
+    "location": "456 Parkview Lane, Parkside",
+    "facilities": [
+      "Courtyard",
+      "Balcony",
+      "Library"
+    ]
+  },
+  {
+    "id": 4,
+    "image_url": "https://i.ibb.co/hB1gFGy/student-housing.jpg",
+    "estate_title": "Student Housing Complex",
+    "segment_name": "Student Housing",
+    "description": "Discover the ideal student living experience in this modern housing complex designed for academic success and social engagement. With its convenient location near campus and a range of amenities including study lounges, fitness center, and communal spaces, this housing complex provides students with a supportive environment to thrive.",
+    "price": 1500,
+    "status": "rent",
+    "area": 800,
+    "location": "789 University Avenue, College Town",
+    "facilities": [
+      "Study Lounges",
+      "Fitness Center",
+      "Communal Kitchen"
+    ]
+  },
+  {
+    "id": 5,
+    "image_url": "https://i.ibb.co/Zd4whMj/senior-living.jpg",
+    "estate_title": "Senior Living Community",
+    "segment_name": "Senior Living",
+    "description": "Experience retirement living at its finest in this vibrant senior community designed for active and independent seniors. With a variety of amenities and activities tailored to older adults, including fitness classes, social events, and on-site dining options, residents can enjoy a fulfilling and enriching lifestyle in a supportive environment.",
+    "price": 4000,
+    "status": "rent",
+    "area": 1500,
+    "location": "101 Sunset Boulevard, Senior Haven",
+    "facilities": [
+      "Fitness Classes",
+      "Social Events",
+      "On-site Dining"
+    ]
+  },
+  {
+    "id": 6,
+    "image_url": "https://i.ibb.co/yddjs4z/vacation-rental.jpg",
+    "estate_title": "Luxurious Vacation Rental Villa",
+    "segment_name": "Vacation Rental",
+    "description": "Escape to paradise in this luxurious vacation rental villa nestled in a tropical oasis. With its breathtaking ocean views, private pool, and spacious accommodations, this villa offers the ultimate retreat for relaxation and indulgence. Whether you're lounging by the pool or exploring nearby attractions, every moment is sure to be memorable.",
+    "price": 600,
+    "status": "rent",
+    "area": 2500,
+    "location": "321 Palm Beach Road, Paradise Island",
+    "facilities": [
+      "Private Pool",
+      "Ocean Views",
+      "Outdoor Lounge"
+    ]
+  }
+]
