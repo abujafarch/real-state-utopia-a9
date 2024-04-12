@@ -3,10 +3,15 @@ import { FaLock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdPhoto } from "react-icons/md";
+import { FaEye } from "react-icons/fa";
+import { useState } from "react";
+import { FaEyeSlash } from "react-icons/fa";
+
 
 
 
 const Register = () => {
+    const [showPassword, setShowPassword] = useState(false)
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">
             <form className="w-full">
@@ -30,7 +35,18 @@ const Register = () => {
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaLock></FaLock></span>
-                        <input className=" outline-none w-full py-2 px-3" type="password" name="password" placeholder="Your Password" />
+                        <input className=" outline-none w-full py-2 px-3" type={showPassword ? 'text' : 'password'} name="password" placeholder="Your Password" />
+
+                        <button onClick={(e) => {
+                            e.preventDefault()
+                            setShowPassword(!showPassword)
+                        }} className="text-xl text-[#2A9D8F] pr-2">
+
+                            {
+                                showPassword ? <FaEye></FaEye> : <FaEyeSlash></FaEyeSlash>
+                            }
+
+                        </button>
                     </div>
 
                     <button className="bg-[#2A9D8F] w-full py-2 rounded-sm mt-7 text-white font-poppins text-lg font-medium">Register</button>
