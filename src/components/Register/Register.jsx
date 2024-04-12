@@ -15,22 +15,22 @@ const Register = () => {
                 <div className="sm:px-10 px-5">
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaUser></FaUser></span>
-                        <input className=" outline-none max-w-[170px] sm:flex-1 py-2 px-3" type="text" name="name" placeholder="Your Name" />
+                        <input className=" outline-none w-full py-2 px-3" type="text" name="name" placeholder="Your Name" />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><MdEmail></MdEmail></span>
-                        <input className=" outline-none max-w-[170px] sm:flex-1 py-2 px-3" type="email" name="email" placeholder="Your Email" />
+                        <input className=" outline-none w-full py-2 px-3" type="email" name="email" placeholder="Your Email" />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><MdPhoto></MdPhoto></span>
-                        <input className=" outline-none max-w-[170px] sm:flex-1 py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" />
+                        <input className=" outline-none w-full py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaLock></FaLock></span>
-                        <input className=" outline-none max-w-[170px] sm:flex-1 py-2 px-3" type="password" name="password" placeholder="Your Password" />
+                        <input className=" outline-none w-full py-2 px-3" type="password" name="password" placeholder="Your Password" />
                     </div>
 
                     <button className="bg-[#2A9D8F] w-full py-2 rounded-sm mt-7 text-white font-poppins text-lg font-medium">Register</button>
