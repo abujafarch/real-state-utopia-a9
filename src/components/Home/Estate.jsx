@@ -6,7 +6,7 @@ import { LiaChartAreaSolid } from "react-icons/lia";
 
 
 const Estate = ({ estate }) => {
-    console.log(estate)
+    // console.log(estate)
     const { image_url, estate_title, segment_name, description, price, status, area, location, facilities } = estate
     return (
         <div className="border p-2 rounded-md">

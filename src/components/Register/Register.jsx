@@ -7,7 +7,9 @@ import { FaEye } from "react-icons/fa";
 import { useContext, useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";
 import { AuthContext } from "../../provider/AuthProvider";
-
+import toast from "react-hot-toast";
+import { updateProfile } from "firebase/auth";
+import auth from "../../firebase/firebase.config";
 
 
 
@@ -23,15 +25,32 @@ const Register = () => {
         const photo = e.currentTarget.photo.value
         const password = e.currentTarget.password.value
 
+        const pattern = /^(?=.*[a-z])(?=.*[A-Z])/;
+
+        if (!pattern.test(password) || password.length < 6) {
+            toast.error('You have missed 6 letters or at least one uppercase letter or one lowercase letter in your password.')
+            return
+        }
+
         createUser(email, password)
             .then(result => {
+                // console.log(auth)
+                toast.success('Registration Successful')
+                updateProfile(auth.currentUser, {
+                    displayName: name,
+                    photoURL: photo
+                })
+                    .then(() => {
+                        console.log('profile updated')
+                    })
+                    .catch(error => {
+                        console.error(error);
+                    })
                 console.log(result.user)
             })
-            .then(error => {
+            .catch(error => {
                 console.error(error);
             })
-
-        console.log(email, name, photo, password)
     }
 
     return (
@@ -42,22 +61,22 @@ const Register = () => {
                 <div className="sm:px-10 px-5">
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaUser></FaUser></span>
-                        <input className=" outline-none w-full py-2 px-3" type="text" name="name" placeholder="Your Name" />
+                        <input className=" outline-none w-full py-2 px-3" type="text" name="name" placeholder="Your Name" required />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><MdEmail></MdEmail></span>
-                        <input className=" outline-none w-full py-2 px-3" type="email" name="email" placeholder="Your Email" />
+                        <input className=" outline-none w-full py-2 px-3" type="email" name="email" placeholder="Your Email" required />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><MdPhoto></MdPhoto></span>
-                        <input className=" outline-none w-full py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" />
+                        <input className=" outline-none w-full py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" required/>
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaLock></FaLock></span>
-                        <input className=" outline-none w-full py-2 px-3" type={showPassword ? 'text' : 'password'} name="password" placeholder="Your Password" />
+                        <input className=" outline-none w-full py-2 px-3" type={showPassword ? 'text' : 'password'} name="password" placeholder="Your Password" required/>
 
                         <button onClick={(e) => {
                             e.preventDefault()
