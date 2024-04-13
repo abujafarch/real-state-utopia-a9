@@ -4,17 +4,39 @@ import { FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { MdPhoto } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEyeSlash } from "react-icons/fa";
+import { AuthContext } from "../../provider/AuthProvider";
 
 
 
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
+
+    const { createUser } = useContext(AuthContext)
+
+    const handleRegister = (e) => {
+        e.preventDefault()
+        const name = e.currentTarget.name.value
+        const email = e.currentTarget.email.value
+        const photo = e.currentTarget.photo.value
+        const password = e.currentTarget.password.value
+
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+            })
+            .then(error => {
+                console.error(error);
+            })
+
+        console.log(email, name, photo, password)
+    }
+
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">
-            <form className="w-full">
+            <form onSubmit={handleRegister} className="w-full">
                 <h1 className="bg-[#2A9D8F] rounded-t-lg py-10 text-3xl text-white font-mont text-center font-bold">Register</h1>
 
                 <div className="sm:px-10 px-5">
