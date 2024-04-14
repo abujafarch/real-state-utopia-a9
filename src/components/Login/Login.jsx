@@ -33,7 +33,6 @@ const Login = () => {
             })
     }
 
-
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
@@ -45,7 +44,6 @@ const Login = () => {
                 console.error(error);
             })
     }
-
 
     const handleGithubLogin = () => {
         githubLogin()

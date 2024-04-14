@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update-profile',
-                element: <UpdateProfile></UpdateProfile>
+                element:<UpdateProfile></UpdateProfile>
             },
             {
                 path: '/estate-details/:currentEstateId',
