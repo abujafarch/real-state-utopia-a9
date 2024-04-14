@@ -7,7 +7,7 @@ import { MdOutlineKeyboardArrowLeft } from "react-icons/md";
 
 const Slider = () => {
     return (
-        <div className='mt-8'>
+        <div className='md:mt-8 mt-4'>
             <Swiper
                 navigation={{
                     nextEl: '.slide-next',
