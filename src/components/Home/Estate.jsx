@@ -2,12 +2,14 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineCategory } from "react-icons/md";
 import { IoMdPricetag } from "react-icons/io";
 import { LiaChartAreaSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 
 
 const Estate = ({ estate }) => {
     // console.log(estate)
-    const { image_url, estate_title, segment_name, description, price, status, area, location, facilities } = estate
+    const { image_url, estate_title, segment_name, description, price, status, area, location, facilities, id } = estate
+
     return (
         <div className="border p-2 rounded-md">
             <div className="rounded-md relative">
@@ -43,7 +45,9 @@ const Estate = ({ estate }) => {
                 }
             </p>
             <div className="mt-3">
-                <button className="bg-[#2A9D8F] border-2 border-[#2A9D8F] hover:border-[#F4A261] hover:text-[#F4A261] hover:bg-transparent px-3 text-white font-medium transition duration-300 font-mont py-2 rounded-md">View Property</button>
+                <Link to={`/estate-details/${id}`}>
+                    <button className="bg-[#2A9D8F] border-2 border-[#2A9D8F] hover:border-[#F4A261] hover:text-[#F4A261] hover:bg-transparent px-3 text-white font-medium transition duration-300 font-mont py-2 rounded-md">View Property</button>
+                </Link>
             </div>
         </div>
     );

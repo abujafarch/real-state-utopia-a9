@@ -9,12 +9,12 @@ import EstateDetails from "../components/EstateDetails/EstateDetails";
 
 const router = createBrowserRouter([
     {
-        path:'/',
+        path: '/',
         element: <Root></Root>,
         errorElement: <NotFound></NotFound>,
-        children:[
+        children: [
             {
-                path:'/',
+                path: '/',
                 element: <Home></Home>
             },
             {
@@ -22,15 +22,16 @@ const router = createBrowserRouter([
                 element: <Login></Login>
             },
             {
-                path:'/register',
+                path: '/register',
                 element: <Register></Register>
             },
             {
-                path:'/update-profile',
+                path: '/update-profile',
                 element: <UpdateProfile></UpdateProfile>
             },
             {
-                path:'/estate-details',
+                path: '/estate-details/:currentEstateId',
+                loader: () => fetch('/properties.json'),
                 element: <EstateDetails></EstateDetails>
             }
         ]
