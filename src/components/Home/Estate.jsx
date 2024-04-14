@@ -3,6 +3,7 @@ import { MdOutlineCategory } from "react-icons/md";
 import { IoMdPricetag } from "react-icons/io";
 import { LiaChartAreaSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 

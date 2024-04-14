@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 
@@ -13,6 +14,9 @@ const EstateDetails = () => {
 
     return (
         <div className="sm:mt-12 mt-7">
+            <Helmet>
+                <title>{estate_title}</title>
+            </Helmet>
             <div>
                 <h1 className="font-poppins mb-2 font-semibold text-xl md:text-3xl">{estate_title}</h1>
                 <div className="mb-3">

@@ -30,18 +30,23 @@ const Navbar = () => {
 
                 <button onClick={handleLogout} className='bg-[#F4A261] px-5 py-[6px] rounded-md text-white'><a>Logout</a></button>
 
-                <NavLink to='/user-profile'>
+                <button>
                     {
                         user ?
-                            <div className="w-[35px] h-[35px] tooltip flex items-center justify-center" data-tip={user.displayName}>
-                                <img src={user.photoURL} className={`w-full h-full object-cover border-2 rounded-full border-[#F4A261]`} />
+                            <div className="w-[35px] h-[35px] tooltip flex items-center justify-center" data-tip={user.displayName ? user.displayName : 'No Name'}>
+
+                                <img
+                                    src={user.photoURL ? user.photoURL : <p className="text-4xl tooltip flex items-center" data-tip='No photo' ><CgProfile></CgProfile></p>}
+                                    className="w-full h-full object-cover border-2 rounded-full border-[#F4A261]"
+                                />
+
                             </div>
-                          : <p className="text-4xl tooltip flex items-center" data-tip='no user' >
+                            : <p className="text-4xl tooltip flex items-center" data-tip='no user' >
                                 <CgProfile></CgProfile>
                             </p>
                     }
-
-                </NavLink>
+                </button>
+                
             </div>
         </div>
     );

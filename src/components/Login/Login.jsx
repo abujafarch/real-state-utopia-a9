@@ -10,6 +10,7 @@ import { signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
 import { GoogleAuthProvider } from "firebase/auth";
 import { GithubAuthProvider } from "firebase/auth";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -57,6 +58,9 @@ const Login = () => {
 
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">
+            <Helmet>
+                <title>Login | Utopia</title>
+            </Helmet>
 
             <h1 className="bg-[#2A9D8F] rounded-t-lg py-10 text-3xl text-white font-mont text-center font-bold">Login</h1>
             <div className="sm:px-10 px-5">

@@ -10,6 +10,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import { updateProfile } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -55,6 +56,10 @@ const Register = () => {
 
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">
+            <Helmet>
+                <title>Register | Utopia</title>
+            </Helmet>
+
             <form onSubmit={handleRegister} className="w-full">
                 <h1 className="bg-[#2A9D8F] rounded-t-lg py-10 text-3xl text-white font-mont text-center font-bold">Register</h1>
 
