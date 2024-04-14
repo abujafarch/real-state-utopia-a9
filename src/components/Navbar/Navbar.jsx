@@ -2,9 +2,11 @@ import { signOut } from "firebase/auth";
 import { CgProfile } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
 import auth from "../../firebase/firebase.config";
+import { useContext } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
-
+    const { user } = useContext(AuthContext)
 
     const handleLogout = () => {
         signOut(auth)
@@ -29,9 +31,15 @@ const Navbar = () => {
                 <button onClick={handleLogout} className='bg-[#F4A261] px-5 py-[6px] rounded-md text-white'><a>Logout</a></button>
 
                 <NavLink to='/user-profile'>
-                    <p className="text-3xl tooltip flex items-center" data-tip='no user' >
-                        <CgProfile></CgProfile>
-                    </p>
+                    {
+                        user ?
+                            <div className="w-[35px] h-[35px] tooltip flex items-center justify-center" data-tip={user.displayName}>
+                                <img src={user.photoURL} className={`w-full h-full object-cover border-2 rounded-full border-[#F4A261]`} />
+                            </div>
+                          : <p className="text-4xl tooltip flex items-center" data-tip='no user' >
+                                <CgProfile></CgProfile>
+                            </p>
+                    }
 
                 </NavLink>
             </div>
