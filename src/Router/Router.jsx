@@ -6,6 +6,9 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import EstateDetails from "../components/EstateDetails/EstateDetails";
+import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
+import LoginReg from "../components/PrivateRoutes/LoginReg";
+import Loader from "../components/Loader/Loader";
 
 const router = createBrowserRouter([
     {
@@ -19,11 +22,11 @@ const router = createBrowserRouter([
             },
             {
                 path: '/login',
-                element: <Login></Login>
+                element: <LoginReg><Login></Login></LoginReg>
             },
             {
                 path: '/register',
-                element: <Register></Register>
+                element: <LoginReg><Register></Register></LoginReg>
             },
             {
                 path: '/update-profile',
@@ -32,9 +35,13 @@ const router = createBrowserRouter([
             {
                 path: '/estate-details/:currentEstateId',
                 loader: () => fetch('/properties.json'),
-                element: <EstateDetails></EstateDetails>
+                element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>
             }
         ]
+    },
+    {
+        path:'/loader',
+        element:<Loader></Loader>
     }
 ])
 export default router

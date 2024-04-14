@@ -2,23 +2,20 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BiLogoGithub } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
-import { signInWithPopup } from "firebase/auth";
 import auth from "../../firebase/firebase.config";
-import { GoogleAuthProvider } from "firebase/auth";
-import { GithubAuthProvider } from "firebase/auth";
 import { Helmet } from "react-helmet-async";
 
 
 
 const Login = () => {
-    const { loginWithPassword } = useContext(AuthContext)
-    const googleProvider = new GoogleAuthProvider()
-    const githubProvider = new GithubAuthProvider()
+    const { loginWithPassword, githubLogin, googleLogin } = useContext(AuthContext)
 
+    const navigate = useNavigate()
+    const location = useLocation()
     const handleLogin = (e) => {
         e.preventDefault()
         const email = e.currentTarget.email.value
@@ -26,6 +23,8 @@ const Login = () => {
 
         loginWithPassword(email, password)
             .then(result => {
+                toast.success('logged in successfully')
+                navigate(location?.state ? location.state : '/')
                 console.log(result.user)
             })
             .catch(error => {
@@ -36,8 +35,10 @@ const Login = () => {
 
 
     const handleGoogleLogin = () => {
-        signInWithPopup(auth, googleProvider)
+        googleLogin()
             .then(result => {
+                toast.success('logged in successfully')
+                navigate(location?.state ? location.state : '/')
                 console.log(result.user)
             })
             .catch(error => {
@@ -47,8 +48,10 @@ const Login = () => {
 
 
     const handleGithubLogin = () => {
-        signInWithPopup(auth, githubProvider)
+        githubLogin()
             .then(result => {
+                toast.success('logged in successfully')
+                navigate(location?.state ? location.state : '/')
                 console.log(result.user)
             })
             .catch(error => {

@@ -28,9 +28,13 @@ const Navbar = () => {
                 <NavLink to='/'><a>Home</a></NavLink>
                 <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
                 <NavLink to='/extra'>Extra Route</NavLink>
-                <NavLink to='/login' className='bg-[#2a9d8f] text-center px-5 py-[6px] rounded-md text-white'><a>Login</a></NavLink>
+                {
+                    !user ?
+                        <NavLink to='/login' className='bg-[#2a9d8f] text-center px-5 py-[6px] rounded-md text-white'><a>Login</a></NavLink> :
+                        <button onClick={handleLogout} className='bg-[#F4A261] text-center px-5 py-[6px] rounded-md text-white'><a>Logout</a></button>
+                }
 
-                <button onClick={handleLogout} className='bg-[#F4A261] text-center px-5 py-[6px] rounded-md text-white'><a>Logout</a></button>
+
 
                 <button>
                     {
