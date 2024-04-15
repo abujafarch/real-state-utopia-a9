@@ -26,8 +26,12 @@ const Navbar = () => {
             <div className='flex gap-5 text-lg font-medium text-[#264653] items-center'>
 
                 <NavLink to='/'><a>Home</a></NavLink>
-                <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
-                <NavLink to='/extra'>Extra Route</NavLink>
+                {
+                    user &&  <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
+                }
+                {
+                    user && <NavLink to='/extra'>Extra Route</NavLink>
+                }
                 {
                     !user ?
                         <NavLink to='/login' className='bg-[#2a9d8f] text-center px-5 py-[6px] rounded-md text-white'><a>Login</a></NavLink> :

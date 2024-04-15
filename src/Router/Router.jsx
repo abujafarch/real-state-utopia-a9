@@ -30,7 +30,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/update-profile',
-                element:<UpdateProfile></UpdateProfile>
+                element:<PrivateRoutes><UpdateProfile></UpdateProfile></PrivateRoutes>
             },
             {
                 path: '/estate-details/:currentEstateId',
@@ -38,10 +38,6 @@ const router = createBrowserRouter([
                 element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>
             }
         ]
-    },
-    {
-        path:'/loader',
-        element:<Loader></Loader>
     }
 ])
 export default router

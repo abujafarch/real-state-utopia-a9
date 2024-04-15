@@ -5,16 +5,16 @@ import Loader from "../Loader/Loader";
 
 const PrivateRoutes = ({ children }) => {
 
-    const {loading} = useContext(AuthContext)
-    const {pathname} = useLocation()
+    const { loading } = useContext(AuthContext)
+    const { pathname } = useLocation()
     console.log(pathname)
 
     const { user } = useContext(AuthContext)
     return (
         <div>
             {
-                loading? <Loader></Loader> : user ? children : 
-                <Navigate to='/login' state={pathname}></Navigate>
+                loading ? <Loader></Loader> : user ? children :
+                    <Navigate to='/login' state={pathname}></Navigate>
             }
         </div>
     );
