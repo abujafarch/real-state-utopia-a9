@@ -2,7 +2,7 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BiLogoGithub } from "react-icons/bi";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
@@ -29,8 +29,8 @@ const Login = () => {
 
         loginWithPassword(email, password)
             .then(result => {
-                toast.success('logged in successfully')
                 navigate(location?.state ? location.state : '/')
+                toast.success('logged in successfully')
                 console.log(result.user)
             })
             .catch(error => {
@@ -42,8 +42,8 @@ const Login = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
-                toast.success('logged in successfully')
                 navigate(location?.state ? location.state : '/')
+                toast.success('logged in successfully')
                 console.log(result.user)
             })
             .catch(error => {
@@ -54,14 +54,18 @@ const Login = () => {
     const handleGithubLogin = () => {
         githubLogin()
             .then(result => {
-                toast.success('logged in successfully')
                 navigate(location?.state ? location.state : '/')
+                toast.success('logged in successfully')
                 console.log(result.user)
             })
             .catch(error => {
                 console.error(error);
             })
     }
+
+    // if(user && !loading){
+    //     return <Navigate to='/'></Navigate>
+    // }
 
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">

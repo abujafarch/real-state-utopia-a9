@@ -1,8 +1,17 @@
-# React + Vite
+# Utopia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Live Link : www.google.com
 
-Currently, two official plugins are available:
+# Features and Characteristics:
+- This the trusted website for residential service.
+- You can buy or rent property as your wish.
+- you can add any property to your wishlist for later if you have an account.
+- More than 100k property available now. You can explore from anywhere.
+- Get all the information you need about any property.
+- Here you will find properties from all over the world.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# npm packages:
+- Swiper Slider
+- Animate.css
+- AOS Packages
+
