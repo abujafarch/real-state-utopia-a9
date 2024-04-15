@@ -1,4 +1,4 @@
-# Utopia
+# **Utopia
 
 Live Link : www.google.com
 
@@ -11,7 +11,7 @@ Live Link : www.google.com
 - Here you will find properties from all over the world.
 
 # npm packages:
-- Swiper Slider
-- Animate.css
-- AOS Packages
+- [Swiper Slider](https://swiperjs.com/)
+- [Animate.css](https://animate.style/)
+- [AOS Packages](https://www.npmjs.com/package/aos)
 
