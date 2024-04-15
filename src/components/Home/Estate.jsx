@@ -3,8 +3,10 @@ import { MdOutlineCategory } from "react-icons/md";
 import { IoMdPricetag } from "react-icons/io";
 import { LiaChartAreaSolid } from "react-icons/lia";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
-
+import 'animate.css'
+import AOS from 'aos'
+import 'aos/dist/aos.css'
+AOS.init()
 
 
 const Estate = ({ estate }) => {
@@ -12,7 +14,7 @@ const Estate = ({ estate }) => {
     const { image_url, estate_title, segment_name, description, price, status, area, location, facilities, id } = estate
 
     return (
-        <div className="border p-2 rounded-md">
+        <div className="border p-2 rounded-md" data-aos="fade-up" data-aos-duration="1000" data-aos-offset="180">
             <div className="rounded-md relative">
                 <img className="rounded-md w-full" src={image_url} />
                 <p className="bg-[#ffffff] px-5 py-[6px] rounded-r-md w-fit text-black hover:text-[#2A9D8F] font-medium font-poppins absolute top-5 left-0 cursor-pointer">{status}</p>

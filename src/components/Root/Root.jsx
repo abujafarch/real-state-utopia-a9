@@ -8,18 +8,20 @@ import Loader from '../Loader/Loader';
 
 
 const Root = () => {
-    const {loading} = useContext(AuthContext)
+    const { loading } = useContext(AuthContext)
+
+    if (loading) {
+        return <Loader></Loader>
+    }
     return (
         <div className=''>
             <div className='max-w-[1440px] mx-auto px-3 md:px-4 lg:px-5'>
-                {
-                    loading? '' : <Navbar></Navbar>
-                }
+
+                <Navbar></Navbar>
                 <Outlet></Outlet>
+
             </div>
-            {
-                loading? '' : <Footer></Footer>
-            }
+            <Footer></Footer>
             <Toaster />
         </div>
     );

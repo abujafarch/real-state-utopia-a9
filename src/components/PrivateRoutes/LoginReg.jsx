@@ -11,9 +11,13 @@ const LoginReg = ({ children }) => {
 
     return (
         <div>
-            {
-                loading? <Loader></Loader> : user ? location?.state? <Navigate to={location.state}></Navigate>: <Navigate to='/'></Navigate> : children
-            }
+            {/* {
+                loading? <Loader></Loader> : user ? <Navigate to='/'></Navigate> : children
+            } */}
+            
+            {/* {
+                loading ? <Loader></Loader> : user ? location?.state ? <Navigate to={location.state}></Navigate> : <Navigate to='/'></Navigate> : children
+            } */}
         </div>
     );
 };

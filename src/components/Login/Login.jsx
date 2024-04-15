@@ -8,15 +8,20 @@ import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
 import auth from "../../firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
+import Loader from "../Loader/Loader";
 
 
 
 const Login = () => {
-    const { loginWithPassword, githubLogin, googleLogin } = useContext(AuthContext)
+    const { loginWithPassword, githubLogin, googleLogin, user, loading } = useContext(AuthContext)
 
     const navigate = useNavigate()
     const location = useLocation()
-    
+
+    // if(!loading && user){
+    //     navigate('/')
+    // }
+
     const handleLogin = (e) => {
         e.preventDefault()
         const email = e.currentTarget.email.value

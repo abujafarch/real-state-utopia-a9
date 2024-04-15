@@ -1,12 +1,20 @@
-import { signOut } from "firebase/auth";
 import { CgProfile } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
-import auth from "../../firebase/firebase.config";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
+
+    const [userName, setUserName] = useState(user)
+
+    useEffect(() => {
+        setUserName(user)
+    }, [user])
+    
+    console.log(userName)
+    // console.log(userName.displayName)
 
     const handleLogout = () => {
         logOut()
@@ -27,7 +35,7 @@ const Navbar = () => {
 
                 <NavLink to='/'><a>Home</a></NavLink>
                 {
-                    user &&  <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
+                    user && <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
                 }
                 {
                     user && <NavLink to='/extra'>Extra Route</NavLink>

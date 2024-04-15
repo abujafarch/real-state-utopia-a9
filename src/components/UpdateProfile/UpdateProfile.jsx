@@ -1,11 +1,10 @@
 import { MdEmail } from "react-icons/md";
-import { FaLock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
 import { MdPhoto } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import auth from "../../firebase/firebase.config";
 
 
 const UpdateProfile = () => {
@@ -17,7 +16,8 @@ const UpdateProfile = () => {
         const photo = e.currentTarget.photo.value
         updateProf(name, photo)
             .then(() => {
-                console.log('profile updated')
+                console.log(user)
+                console.log(auth)
             })
             .catch(error => {
                 console.error(error);
