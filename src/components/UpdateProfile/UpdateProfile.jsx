@@ -34,6 +34,9 @@ const UpdateProfile = () => {
 
             <form onSubmit={handleUpdateProfile} className="w-full">
                 <h1 className="bg-[#2A9D8F] rounded-t-lg py-10 text-3xl text-white font-mont text-center font-bold">Update Profile</h1>
+                <div className="flex justify-center my-5">
+                    <img src={user.photoURL} className="w-[110px] h-[110px] rounded-full object-cover" />
+                </div>
 
                 <div className="sm:px-10 px-5">
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">

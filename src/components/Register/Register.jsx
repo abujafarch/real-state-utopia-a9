@@ -36,6 +36,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 toast.success('Registration Successful')
+                navigate('/')
                 updateProfile(auth.currentUser, {
                     displayName: name,
                     photoURL: photo
@@ -43,7 +44,7 @@ const Register = () => {
                     .then(() => {
                         console.log('profile updated')
                         setUpProfile(true)
-                        navigate('/')
+                        
                     })
                     .catch(error => {
                         console.error(error);
@@ -53,7 +54,7 @@ const Register = () => {
             .catch(error => {
                 setLoading(false)
                 toast.error('Account Already Exist with this email')
-                console.error(error);
+                console.log(error);
             })
     }
 
