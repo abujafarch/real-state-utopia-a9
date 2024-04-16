@@ -7,8 +7,7 @@ import Register from "../components/Register/Register";
 import UpdateProfile from "../components/UpdateProfile/UpdateProfile";
 import EstateDetails from "../components/EstateDetails/EstateDetails";
 import PrivateRoutes from "../components/PrivateRoutes/PrivateRoutes";
-import LoginReg from "../components/PrivateRoutes/LoginReg";
-import Loader from "../components/Loader/Loader";
+import Wishlist from "../components/Wishlist/Wishlist";
 
 const router = createBrowserRouter([
     {
@@ -36,6 +35,10 @@ const router = createBrowserRouter([
                 path: '/estate-details/:currentEstateId',
                 loader: () => fetch('/properties.json'),
                 element: <PrivateRoutes><EstateDetails></EstateDetails></PrivateRoutes>
+            },
+            {
+                path:'/wishlist',
+                element: <Wishlist></Wishlist>
             }
         ]
     }

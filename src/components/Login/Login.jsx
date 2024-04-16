@@ -2,14 +2,11 @@ import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
 import { BiLogoGithub } from "react-icons/bi";
-import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import toast from "react-hot-toast";
-import auth from "../../firebase/firebase.config";
 import { Helmet } from "react-helmet-async";
-import Loader from "../Loader/Loader";
-
 
 
 const Login = () => {
@@ -64,10 +61,6 @@ const Login = () => {
                 console.error(error);
             })
     }
-
-    // if(user && !loading){
-    //     return <Navigate to='/'></Navigate>
-    // }
 
     return (
         <div className="max-w-[430px] mx-auto rounded-md shadow-md mt-24">

@@ -2,6 +2,7 @@ import { IoLocationOutline } from "react-icons/io5";
 import { MdOutlineCategory } from "react-icons/md";
 import { IoMdPricetag } from "react-icons/io";
 import { LiaChartAreaSolid } from "react-icons/lia";
+import { MdFavoriteBorder } from "react-icons/md";
 import { Link } from "react-router-dom";
 import 'animate.css'
 import AOS from 'aos'
@@ -18,6 +19,7 @@ const Estate = ({ estate }) => {
             <div className="rounded-md relative">
                 <img className="rounded-md w-full" src={image_url} />
                 <p className="bg-[#ffffff] px-5 py-[6px] rounded-r-md w-fit text-black hover:text-[#2A9D8F] font-medium font-poppins absolute top-5 left-0 cursor-pointer">{status}</p>
+                <p className="absolute z-20 right-3 text-2xl p-2 bg-[#f4a361cc] flex items-center justify-center rounded-full top-5 text-[#2A9D8F] cursor-pointer"><MdFavoriteBorder></MdFavoriteBorder></p>
             </div>
             <div>
                 <p className="flex items-center gap-1 mt-5 text-[#2646539f] font-medium"><IoLocationOutline></IoLocationOutline> {location}</p>

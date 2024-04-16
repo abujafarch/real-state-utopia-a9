@@ -4,7 +4,6 @@ import { MdPhoto } from "react-icons/md";
 import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
-import auth from "../../firebase/firebase.config";
 import toast from "react-hot-toast";
 
 

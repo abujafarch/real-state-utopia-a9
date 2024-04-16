@@ -47,7 +47,7 @@ const Navbar = () => {
                             user && <NavLink to='/update-profile'><a>Update Profile</a></NavLink>
                         }
                         {
-                            user && <NavLink to='/extra'>Extra Route</NavLink>
+                            user && <NavLink to='/wishlist'>Wishlist</NavLink>
                         }
                         {
                             !user ?
