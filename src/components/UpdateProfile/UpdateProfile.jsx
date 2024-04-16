@@ -5,10 +5,11 @@ import { useContext } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import auth from "../../firebase/firebase.config";
+import toast from "react-hot-toast";
 
 
 const UpdateProfile = () => {
-    const { user, updateProf } = useContext(AuthContext)
+    const { user, updateProf, setUpProfile } = useContext(AuthContext)
 
     const handleUpdateProfile = (e) => {
         e.preventDefault()
@@ -16,8 +17,9 @@ const UpdateProfile = () => {
         const photo = e.currentTarget.photo.value
         updateProf(name, photo)
             .then(() => {
+                setUpProfile(true)
+                toast.success('Profile Updated Successfully')
                 console.log(user)
-                console.log(auth)
             })
             .catch(error => {
                 console.error(error);

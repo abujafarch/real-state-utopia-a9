@@ -13,7 +13,7 @@ import Loader from "../Loader/Loader";
 
 
 const Login = () => {
-    const { loginWithPassword, githubLogin, googleLogin, user, loading } = useContext(AuthContext)
+    const { loginWithPassword, githubLogin, googleLogin, user, setLoading } = useContext(AuthContext)
 
     const navigate = useNavigate()
     const location = useLocation()
@@ -34,7 +34,9 @@ const Login = () => {
                 console.log(result.user)
             })
             .catch(error => {
+                setLoading(false)
                 toast.error("Password or email doesn't match")
+                navigate(location?.state ? location.state : '/login')
                 console.error(error);
             })
     }

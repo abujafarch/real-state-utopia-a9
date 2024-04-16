@@ -1,7 +1,7 @@
 import { MdEmail } from "react-icons/md";
 import { FaLock } from "react-icons/fa";
 import { FaUser } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { MdPhoto } from "react-icons/md";
 import { FaEye } from "react-icons/fa";
 import { useContext, useState } from "react";
@@ -16,8 +16,8 @@ import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const [showPassword, setShowPassword] = useState(false)
-
-    const { createUser } = useContext(AuthContext)
+    const navigate = useNavigate()
+    const { createUser, setUpProfile, setLoading } = useContext(AuthContext)
 
     const handleRegister = (e) => {
         e.preventDefault()
@@ -35,7 +35,6 @@ const Register = () => {
 
         createUser(email, password)
             .then(result => {
-                // console.log(auth)
                 toast.success('Registration Successful')
                 updateProfile(auth.currentUser, {
                     displayName: name,
@@ -43,6 +42,8 @@ const Register = () => {
                 })
                     .then(() => {
                         console.log('profile updated')
+                        setUpProfile(true)
+                        navigate('/')
                     })
                     .catch(error => {
                         console.error(error);
@@ -50,6 +51,8 @@ const Register = () => {
                 console.log(result.user)
             })
             .catch(error => {
+                setLoading(false)
+                toast.error('Account Already Exist with this email')
                 console.error(error);
             })
     }
@@ -76,12 +79,12 @@ const Register = () => {
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><MdPhoto></MdPhoto></span>
-                        <input className=" outline-none w-full py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" required/>
+                        <input className=" outline-none w-full py-2 px-3" type="text" name="photo" placeholder="Your Photo URL" required />
                     </div>
 
                     <div className="mt-7 flex items-center border-[#2A9D8F] border-2 rounded-sm">
                         <span className="bg-[#2A9D8F] p-2 text-2xl text-white"><FaLock></FaLock></span>
-                        <input className=" outline-none w-full py-2 px-3" type={showPassword ? 'text' : 'password'} name="password" placeholder="Your Password" required/>
+                        <input className=" outline-none w-full py-2 px-3" type={showPassword ? 'text' : 'password'} name="password" placeholder="Your Password" required />
 
                         <button onClick={(e) => {
                             e.preventDefault()
