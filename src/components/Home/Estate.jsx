@@ -4,12 +4,13 @@ import { IoMdPricetag } from "react-icons/io";
 import { LiaChartAreaSolid } from "react-icons/lia";
 import { MdFavoriteBorder } from "react-icons/md";
 import { MdFavorite } from "react-icons/md";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import 'animate.css'
 import AOS from 'aos'
 import 'aos/dist/aos.css'
-import { setWishlist } from "../LocalStorage/localStorage";
-import { useState } from "react";
+import { getWishlist, setWishlist } from "../LocalStorage/localStorage";
+import { useContext, useState } from "react";
+import { AuthContext } from "../../provider/AuthProvider";
 AOS.init()
 
 
@@ -17,12 +18,17 @@ const Estate = ({ estate }) => {
     // console.log(estate)
     const { image_url, estate_title, segment_name, description, price, status, area, location, facilities, id } = estate
 
+    const {user} = useContext(AuthContext)
+    const navigate = useNavigate()
 
-    const [wishlistState, setWishlistState] = useState(false)
-
+    const wishlists = getWishlist()
+    const wishlist = wishlists.find(wishlist => wishlist.id == id)
     const handleSetWishlist = () =>{
+        if(!user){
+            navigate('/login')
+            return
+        }
         setWishlist(estate)
-        setWishlistState(!wishlistState)
     }
 
     return (
@@ -30,7 +36,7 @@ const Estate = ({ estate }) => {
             <div className="rounded-md relative">
                 <img className="rounded-md w-full" src={image_url} />
                 <p className="bg-[#ffffff] px-5 py-[6px] rounded-r-md w-fit text-black hover:text-[#2A9D8F] font-medium font-poppins absolute top-5 left-0 cursor-pointer">{status}</p>
-                <p onClick={handleSetWishlist} className="absolute z-20 right-3 text-2xl p-2 bg-[#f4a361cc] flex items-center justify-center rounded-full top-5 text-[#2A9D8F] cursor-pointer">{wishlistState ? <MdFavorite></MdFavorite> : <MdFavoriteBorder></MdFavoriteBorder>}</p>
+                <p onClick={handleSetWishlist} className="absolute z-20 right-3 text-2xl p-2 bg-[#f4a361cc] flex items-center justify-center rounded-full top-5 text-[#2A9D8F] cursor-pointer">{user && wishlist ? <MdFavorite></MdFavorite> : <MdFavoriteBorder></MdFavoriteBorder>}</p>
             </div>
             <div>
                 <p className="flex items-center gap-1 mt-5 text-[#2646539f] font-medium"><IoLocationOutline></IoLocationOutline> {location}</p>

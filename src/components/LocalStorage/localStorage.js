@@ -15,16 +15,15 @@ export const setWishlist = (estate) => {
 
     const wishlistValidation = wishlists.find(wishlist => wishlist.id == estate.id)
 
-    if(wishlistValidation){
+    if (wishlistValidation) {
         wishlists = wishlists.filter(wishlist => wishlist.id !== estate.id)
         toast.success('Successfully removed from Wishlist')
     }
 
-    else{
+    else {
         wishlists.push(estate)
         toast.success('Successfully added to Wishlist')
     }
-    // wishlist.push(estate)
 
     const stringifiedWishlists = JSON.stringify(wishlists)
     localStorage.setItem('wishlist', stringifiedWishlists)
