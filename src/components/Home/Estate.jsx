@@ -21,7 +21,7 @@ const Estate = ({ estate }) => {
     const {user} = useContext(AuthContext)
     const navigate = useNavigate()
 
-    const wishlists = getWishlist()
+    const [wishlists, setWishlists] = useState(getWishlist())
     const wishlist = wishlists.find(wishlist => wishlist.id == id)
     const handleSetWishlist = () =>{
         if(!user){
@@ -29,6 +29,7 @@ const Estate = ({ estate }) => {
             return
         }
         setWishlist(estate)
+        setWishlists(getWishlist())
     }
 
     return (
