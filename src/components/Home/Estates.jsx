@@ -12,7 +12,6 @@ const Estates = () => {
             })
     }, [])
 
-    // console.log(estates)
     return (
         <div className="lg:mt-24 md:mt-16 mt-10">
             <div className="flex justify-center md:mb-8 sm:mb-6 mb-4 lg:mb-10">

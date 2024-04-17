@@ -2,6 +2,7 @@ import { CgProfile } from "react-icons/cg";
 import { NavLink } from 'react-router-dom';
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
+import toast from "react-hot-toast";
 
 
 const Navbar = () => {
@@ -14,15 +15,14 @@ const Navbar = () => {
     }, [user])
 
     console.log(userName)
-    // console.log(userName.displayName)
 
     const handleLogout = () => {
         logOut()
-            .then(result => {
-                console.log(result.user)
+            .then(() => {
+                toast.success('successfully logged out')
             })
-            .catch(error => {
-                console.error(error);
+            .catch(() => {
+                toast.success('something is wrong');
             })
     }
 

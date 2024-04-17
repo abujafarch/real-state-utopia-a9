@@ -15,50 +15,42 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
 
-    // if(!loading && user){
-    //     navigate('/')
-    // }
-
     const handleLogin = (e) => {
         e.preventDefault()
         const email = e.currentTarget.email.value
         const password = e.currentTarget.password.value
 
         loginWithPassword(email, password)
-            .then(result => {
+            .then(() => {
                 navigate(location?.state ? location.state : '/')
                 toast.success('logged in successfully')
-                console.log(result.user)
             })
-            .catch(error => {
+            .catch(() => {
                 setLoading(false)
                 toast.error("Password or email doesn't match")
                 navigate(location?.state ? location.state : '/login')
-                console.error(error);
             })
     }
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => {
+            .then(() => {
                 navigate(location?.state ? location.state : '/')
                 toast.success('logged in successfully')
-                console.log(result.user)
             })
-            .catch(error => {
-                console.error(error);
+            .catch(() => {
+                toast.error('something is wrong');
             })
     }
 
     const handleGithubLogin = () => {
         githubLogin()
-            .then(result => {
+            .then(() => {
                 navigate(location?.state ? location.state : '/')
                 toast.success('logged in successfully')
-                console.log(result.user)
             })
-            .catch(error => {
-                console.error(error);
+            .catch(() => {
+                toast.error('something is wrong');
             })
     }
 

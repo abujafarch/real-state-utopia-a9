@@ -15,7 +15,6 @@ AOS.init()
 
 
 const Estate = ({ estate }) => {
-    // console.log(estate)
     const { image_url, estate_title, segment_name, description, price, status, area, location, facilities, id } = estate
 
     const {user} = useContext(AuthContext)

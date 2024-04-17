@@ -18,7 +18,6 @@ const UpdateProfile = () => {
             .then(() => {
                 setUpProfile(true)
                 toast.success('Profile Updated Successfully')
-                console.log(user)
             })
             .catch(error => {
                 console.error(error);

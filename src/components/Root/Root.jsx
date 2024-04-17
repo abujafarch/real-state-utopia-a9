@@ -11,7 +11,7 @@ const Root = () => {
     const { loading } = useContext(AuthContext)
 
     return (
-        <div className=''>
+        <div className='overflow-x-hidden'>
             <div className='max-w-[1440px] mx-auto px-3 md:px-4 lg:px-5'>
 
                 <Navbar></Navbar>
