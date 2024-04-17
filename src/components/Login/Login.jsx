@@ -38,8 +38,9 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
                 toast.success('logged in successfully')
             })
-            .catch(() => {
-                toast.error('something is wrong');
+            .catch((error) => {
+                console.log(error)
+                // toast.error('something is wrong');
             })
     }
 
@@ -49,8 +50,9 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
                 toast.success('logged in successfully')
             })
-            .catch(() => {
-                toast.error('something is wrong');
+            .catch((error) => {
+                console.log(error)
+                // toast.error('something is wrong');
             })
     }
 
