@@ -4,6 +4,8 @@ Live Link : https://utopia-1c334.web.app/
 
 ## Features and Characteristics:
 - This the trusted website for residential service.
+- You can login with email & password, also login with google and github.
+- There is a profile section that gives an idea of your class and you can update your profile when you want.
 - You can buy or rent property as your wish.
 - you can add any property to your wishlist for later if you have an account.
 - More than 100k property available now. You can explore from anywhere.

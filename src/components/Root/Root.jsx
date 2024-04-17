@@ -12,7 +12,7 @@ const Root = () => {
 
     return (
         <div className='overflow-x-hidden'>
-            <div className='max-w-[1440px] mx-auto px-3 md:px-4 lg:px-5'>
+            <div className='max-w-[1440px] mx-auto px-5 md:px-5 lg:px-8'>
 
                 <Navbar></Navbar>
                 {

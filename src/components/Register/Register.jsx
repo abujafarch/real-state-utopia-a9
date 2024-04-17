@@ -51,7 +51,7 @@ const Register = () => {
             })
             .catch(() => {
                 setLoading(false)
-                toast.error('Account Already Exist with this email');
+                toast.error('Account Already Exist with this email or network error');
             })
     }
 

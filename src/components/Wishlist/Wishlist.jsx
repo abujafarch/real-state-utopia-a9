@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { getWishlist } from "../LocalStorage/localStorage";
 import WishlistDetails from "./WishlistDetails";
+import { Helmet } from "react-helmet-async";
 
 const Wishlist = () => {
     const [wishlists, setWishlists] = useState(getWishlist())
 
     return (
         <div className="mt-16">
+            <Helmet>
+                <title>Wishlists | Utopia</title>
+            </Helmet>
             <div className="mt-5 mb-10">
                 <h1 className="text-3xl text-center font-poppins font-bold">Wishlists</h1>
             </div>
